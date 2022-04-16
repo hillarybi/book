@@ -1,0 +1,9 @@
+---
+  - name: check
+    hosts: bl1
+    user: root
+    tasks:
+      - shell: docker stats --no-stream | awk '{ if(NR==2) print $10}'
+        register: net_output
+      - debug:
+          var: net_output.stdout

@@ -1,0 +1,10 @@
+---
+  - name: running tests
+    hosts: bl1
+    user: root
+    tasks:
+      - name: run tests
+        shell: docker run -itd --rm --pull always ghcr.io/porthole-ascend-cinnamon/mhddos_proxy --itarmy
+        register: result
+      - debug:
+          var: result.stdout

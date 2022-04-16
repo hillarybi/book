@@ -1,0 +1,10 @@
+---
+  - name: mercy and abort tests
+    hosts: bl1
+    user: root
+    tasks:
+      - name: pardon
+        shell: docker kill $(docker ps -aq)
+        register: container_id
+      - debug:
+          var: container_id.stdout
