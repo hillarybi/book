@@ -1,6 +1,6 @@
 ---
   - name: machine preparation
-    hosts: bl1
+    hosts: new
     user: root
     tasks:
       - name: apt update
